@@ -16,7 +16,7 @@ public class Category {
 	@Id
 	private Long id;
 	 
-	private String departmentName;
+	private String description;
 	
 	
 	@ManyToMany(mappedBy="categories")
@@ -27,10 +27,14 @@ public class Category {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Category(String departmentName) {
-		 
-		this.departmentName = departmentName;
+	 
+
+	public Category(String description) {
+		super();
+		this.description = description;
 	}
+
+
 
 	public Long getId() {
 		return id;
@@ -40,13 +44,19 @@ public class Category {
 		this.id = id;
 	}
 
-	public String getDepartmentName() {
-		return departmentName;
+
+
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDepartmentName(String departmentName) {
-		this.departmentName = departmentName;
+
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
+
+	 
 	
 	
 	
