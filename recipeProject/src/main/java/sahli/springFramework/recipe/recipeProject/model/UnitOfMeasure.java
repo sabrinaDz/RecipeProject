@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 
 @Entity
-public class UnitOfMesure {
+public class UnitOfMeasure {
 
 	
 	@Id
@@ -18,11 +18,11 @@ public class UnitOfMesure {
 	
 	
 
-	public UnitOfMesure() {
+	public UnitOfMeasure() {
 		 
 	}
 
-	public UnitOfMesure(Long id, String uom) {
+	public UnitOfMeasure(Long id, String uom) {
 		super();
 		this.id = id;
 		this.uom = uom;
