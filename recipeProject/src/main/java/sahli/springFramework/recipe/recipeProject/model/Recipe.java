@@ -28,6 +28,8 @@ public class Recipe {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
+    private String description;
+	
 	private Integer prepTime;
 	
 	private Integer cookTime;
@@ -41,6 +43,8 @@ public class Recipe {
 	@Enumerated(value=EnumType.STRING)
 	private Difficulty difficulty;
 	
+	
+	@Lob
 	private String directions;
 	
 	
@@ -62,8 +66,8 @@ public class Recipe {
 	public Recipe() {
 		 
 	}
-
-
+	
+	 
 	public Long getId() {
 		return id;
 	}
@@ -161,6 +165,7 @@ public class Recipe {
 
 	public void setNotes(Notes notes) {
 		this.notes = notes;
+		this.notes.setRecipe(this);
 	}
 
 
@@ -171,6 +176,38 @@ public class Recipe {
 
 	public void setIngredients(Set<Ingredient> ingredients) {
 		this.ingredients = ingredients;
+	}
+
+	public void addIngredient(Ingredient ingredient){
+		ingredient.setRecipe(this);
+		this.ingredients.add(ingredient);
+	}
+
+
+
+	public String getDescription() {
+		return description;
+	}
+
+
+
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
+
+
+	public Set<Category> getCategories() {
+		return categories;
+	}
+
+
+
+
+	public void setCategories(Set<Category> categories) {
+		this.categories = categories;
 	}
 	
 	
