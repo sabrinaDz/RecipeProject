@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -21,6 +23,7 @@ import sahli.springFramework.recipe.recipeProject.repositories.UnitOfMeasureRepo
 
 
 @Component
+@Slf4j
 public class InitData implements ApplicationListener<ContextRefreshedEvent>{
 
 	private CategoryRepository categoryRepository;
@@ -40,6 +43,7 @@ public class InitData implements ApplicationListener<ContextRefreshedEvent>{
 	public void onApplicationEvent(ContextRefreshedEvent arg0) {
 		// TODO Auto-generated method stub
 		
+	log.debug("creating data");
 	recipeRepository.saveAll(createRecipes());
 		
 		

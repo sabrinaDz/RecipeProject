@@ -2,6 +2,8 @@ package sahli.springFramework.recipe.recipeProject.controllers;
 
 import java.util.Optional;
 
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +16,7 @@ import sahli.springFramework.recipe.recipeProject.services.RecipeService;
 
 
 @Controller
+@Slf4j
 public class IndexController {
 
 	private CategoryRepository categoryRepository;
@@ -40,6 +43,7 @@ public class IndexController {
 		System.out.println("category id est: "+categoryOptional.get().getId());
 		System.out.println("unit of measure id est: "+unitOfMeasureOptional.get().getId());*/
 		
+		log.debug("getting index page");
 		model.addAttribute("recipes",recipeService.getRecipes() );
 		
 		return "index";
