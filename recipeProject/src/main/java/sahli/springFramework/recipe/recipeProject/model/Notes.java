@@ -7,9 +7,12 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToOne;
 
+import lombok.Data;
+
 
 
 @Entity
+@Data
 public class Notes {
 
 	
@@ -25,33 +28,9 @@ public class Notes {
 	
 	
 
-	public Notes() {
-		 ;
-	}
+	 
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getNote() {
-		return note;
-	}
-
-	public void setNote(String note) {
-		this.note = note;
-	}
-
-	public Recipe getRecipe() {
-		return recipe;
-	}
-
-	public void setRecipe(Recipe recipe) {
-		this.recipe = recipe;
-	}
+	 
 	
 	
 }

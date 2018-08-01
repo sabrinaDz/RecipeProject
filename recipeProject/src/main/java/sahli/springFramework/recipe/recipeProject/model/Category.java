@@ -10,8 +10,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import lombok.Data;
 
 
+@Data
 @Entity
 public class Category {
 
@@ -25,41 +27,10 @@ public class Category {
 	@ManyToMany(mappedBy="categories")
 	private Set<Recipe>recipes=new HashSet<Recipe>();
 	
-	public Category() {
-		 
-		// TODO Auto-generated constructor stub
-	}
-
-	 
-
-	public Category(String description) {
-		super();
-		this.description = description;
-	}
+ 
 
 
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
-
-	public String getDescription() {
-		return description;
-	}
-
-
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	 
+ 
 	
 	
 	
